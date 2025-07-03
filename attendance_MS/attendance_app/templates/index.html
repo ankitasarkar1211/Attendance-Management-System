@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background-image: url("{% static 'images/graduation.jpg' %}");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+    }
+    h1{
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+    .stud {
+      background-color: #059694;  /* green */
+      color: white;
+      height: 50vh;
+      width: 20ch;  
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 35px;
+      margin-right: 20px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .stud:hover {
+      background-color: #07c9c6;
+      transform: scale(1.05);
+    }
+
+  .teach {
+      background-color: #924404;  /* green */
+      color: white;
+      height: 50vh;
+      width: 20ch;  
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 35px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .teach:hover {
+      background-color: #e99c44;
+      transform: scale(1.05);
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Attendance Management System</h1>
+  <div class="container">
+    <div class="box">
+      <a href="/log_in">
+        <button class="stud">🧑‍🎓 <br>Student</button>
+        <button class="teach">🧑‍🏫<br>Teacher</button>
+      </a>
+    </div>
+  </div>
+  
+</body>
+</html>
