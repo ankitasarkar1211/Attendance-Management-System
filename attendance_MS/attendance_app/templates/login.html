@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body>
+  {% if message %}
+    <p style="color:green;">{{ message }}</p>
+  {% endif %}
+
+  {% if user_type == 'student' %}
+    <h2>Student Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ student_form.as_p }}
+      <input type="hidden" name="user_type" value="student">
+      <button type="submit">Login</button>
+    </form>
+  {% elif user_type == 'teacher' %}
+    <h2>Teacher Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ teacher_form.as_p }}
+      <input type="hidden" name="user_type" value="teacher">
+      <button type="submit">Login</button>
+    </form>
+  {% else %}
+    <p>Please go back and select user type.</p>
+  {% endif %}
+</body>
+</html>
